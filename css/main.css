@@ -1,0 +1,221 @@
+/*******************
+UTILITIES
+********************/
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html{
+	height: 100%;
+	width: 100%;
+	background-color: lightgrey;
+}
+
+body{
+	height: 100%;
+	width: 100%;
+}
+
+.canvas{
+	height: 100%;
+	width: 100%;
+}
+
+a{
+	text-decoration: none;
+	color: black;
+}
+
+ul li {
+	display: inline;
+}
+
+
+/*---------------------------------------------------------------------------------
+   Header - Higher z index than the background picture
+---------------------------------------------------------------------------------*/
+
+/*header{
+	width: 100%;
+	height: 7%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	outline: solid 2px black;
+	margin: 0;
+	z-index: 100;
+}
+
+header h1{
+	text-align: center;
+	padding: 5px 10px;
+	font-size: 2em;
+}*/
+
+/*---------------------------------------------------------------------------------
+   Div: Groups Canvas - Contains Back gound image
+---------------------------------------------------------------------------------*/
+
+.groups_canvas{
+	width: 100%;
+	min-height: 100%;
+	position: relative;
+	top: 0;
+	left: 0;
+	outline: solid 2px black;
+	
+	margin: 0;
+	
+	/*Set the background image*/
+	background: url(../images/wcbg2.jpg) no-repeat; 
+  	-webkit-background-size: 1366px 643px;
+  	-moz-background-size: 1366px 643px;
+  	-o-background-size: 1366px 643px;
+  	background-size: 1366px 643px;
+
+
+  	/*Background opacity*/
+}
+
+/*---------------------------------------------------------------------------------
+   Div: Groups Container - Groups
+---------------------------------------------------------------------------------*/
+
+.groups_container{
+	width: 100%;
+	min-height: 643px; /*578px with 10% heading*/
+	position: relative;
+	display: block;
+	top: 0px;/*Heder height 65px*/
+	left: 0;
+	outline: solid black 2px;
+	padding: 10px;
+}
+
+/*---------------------------------------------------------------------------------
+   Groups 
+---------------------------------------------------------------------------------*/
+
+.group{
+	position: absolute;
+	display: inline-block;
+	/*border: solid red 2px;*/
+	width: 380px;
+	height: 145px;
+
+}
+
+#groupA{
+	
+	top: 20px;
+	left: 20px;
+}
+
+#groupB{
+	top: 175px;
+	left: 20px;
+}
+
+#groupC{
+	top: 330px;
+	left: 20px;
+}
+
+#groupD{
+	top: 485px;
+	left: 20px;
+}
+
+#groupE{
+	
+	top: 20px;
+	right: 20px;
+}
+
+#groupF{
+	top: 175px;
+	right: 20px;
+}
+
+#groupG{
+	top: 330px;
+	right: 20px;
+}
+
+#groupH{
+	top: 485px;
+	right: 20px;
+}
+
+/*---------------------------------------------------------------------------------
+   Inside Groups Div
+---------------------------------------------------------------------------------*/
+/*Table Head*/
+/*change class name back after testing*/
+.groupName{
+	height: 21px;
+	width: 100%;
+	background-color: black;
+	color: white;
+	padding: 2px;
+	text-align: center;
+}
+
+/*table body and ul*/
+.group_teams{
+	height: 122px;
+	width: 100%;
+	border: solid 2px black;
+}
+
+.team{
+	width: 50%;
+	height: 60px;
+	border: solid 2px black;
+	position: absolute;
+}
+
+.t1{
+	top: 23px;
+	left: 0;
+}
+
+.t2{
+	top: 23px;
+	right: 0;
+}
+
+.t3{
+	bottom: 2px;
+	left: 0;
+}
+
+.t4{
+	bottom: 2px;
+	right: 0;
+}
+
+
+/*Country flag image*/
+/*.teamFlag{
+	width: 188px;
+	height: 56px;
+}*/
+
+/*.teamName{
+	color: black;
+	font-size: 2em;
+	display: block;
+	width: auto;
+	text-align: center;
+	margin: 0 auto;
+	outline: solid 1px red;
+	position: absolute;
+	top: 0;
+	right: 0;
+}*/
