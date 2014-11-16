@@ -35,7 +35,6 @@ ul li {
 	display: inline;
 }
 
-
 /*---------------------------------------------------------------------------------
    Header - Higher z index than the background picture
 ---------------------------------------------------------------------------------*/
@@ -173,6 +172,7 @@ header h1{
 	font-size: 1.4em;
 	color:green;
 	font-weight: 700;
+	font-family: 'Merienda', cursive;
 }
 
 /*May need to make an id*/
@@ -198,6 +198,14 @@ header h1{
 	height: 55px;
 	/*border: solid 2px blue;*/
 	position: absolute;
+}
+
+/*Hover styling*/
+.team:hover{
+	cursor: pointer;
+	border-radius: 20px;
+	border: 1px solid darkgrey;
+	background: #cce5cc;
 }
 
 /*team one li position*/
@@ -229,9 +237,9 @@ header h1{
 -------------------------------------------*/
 /*Set the dimensions and position for the team logo img*/
 .team_Logo{
-	width: 60px;
-	height: 50px;
-	margin-left: 3px;
+	width: 55px;
+	height: 45px;
+	margin: 3px 0 0 5px;
 	display: inline;
 	/*border: dashed 2px black;*/
 	float: left;
@@ -243,10 +251,13 @@ header h1{
 	display: inline;
 	height: 45px;
 	width: 120px;
+	margin: 3px 0 0 3px;
 	/*border: dashed 2px red;*/
 	float: right;
 	font-size: 1em;
 	padding: 10px 0;
 	text-align: center;
 	text-transform: uppercase;
+	color: darkblue;
+	font-family: 'Merienda', cursive;
 }
