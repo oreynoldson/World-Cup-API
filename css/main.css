@@ -85,7 +85,7 @@ header h1{
 /*---------------------------------------------------------------------------------
    Div: Groups Container - Groups
 ---------------------------------------------------------------------------------*/
-
+/*Container for groups that spans the whole page*/
 .groups_container{
 	width: 100%;
 	min-height: 643px; /*578px with 10% heading*/
@@ -100,7 +100,7 @@ header h1{
 /*---------------------------------------------------------------------------------
    Groups 
 ---------------------------------------------------------------------------------*/
-
+/*Generic Outline for groups A to H*/
 .group{
 	position: absolute;
 	display: inline-block;
@@ -155,50 +155,120 @@ header h1{
 /*---------------------------------------------------------------------------------
    Inside Groups Div
 ---------------------------------------------------------------------------------*/
-/*Table Head*/
+/*---------------------------------------
+   Groups Head A- H
+----------------------------------------*/
 /*change class name back after testing*/
 .groupName{
-	height: 21px;
+	height: 45px;
 	width: 100%;
-	background-color: black;
+	border: 3px solid green;
 	color: white;
 	padding: 2px;
 	text-align: center;
 }
 
-/*table body and ul*/
-.group_teams{
-	height: 122px;
-	width: 100%;
-	border: solid 2px black;
+/*Overall text for group*/
+.groupName > p{
+	font-size: 2em;
+	color:green;
+	font-weight: 700;
 }
 
+/*May need to make an id*/
+.groupName > p > span{
+	color: darkblue;
+}
+
+/*-----------------------------------------
+   Groups Body: Li positioning ;
+-------------------------------------------*/
+
+/*table body and ul*/
+.group_teams{
+	height: 100px;
+	width: 100%;
+	border: solid 2px red;
+}
+
+/*overall style for team li*/
 .team{
 	width: 50%;
-	height: 60px;
-	border: solid 2px black;
+	height: 50px;
+	border: solid 2px blue;
 	position: absolute;
 }
 
+/*team one li position*/
 .t1{
-	top: 23px;
+	top: 45px;
 	left: 0;
 }
 
+/*team two li position*/
 .t2{
-	top: 23px;
+	top: 45px;
 	right: 0;
 }
 
+/*team three li position*/
 .t3{
 	bottom: 2px;
 	left: 0;
 }
 
+/*team 4 li position*/
 .t4{
 	bottom: 2px;
 	right: 0;
 }
+
+/*-----------------------------------------
+   Groups Body: Team logo and names ;
+-------------------------------------------*/
+
+/*Set the dimensions and position for the team logos*/
+.team_logo_div{
+	/*width: 60px;
+	height: 45px;
+	display: inline;
+	border: dashed 2px black;
+	float: left;*/
+}
+
+.team_Logo{
+	width: 60px;
+	height: 45px;
+	display: inline;
+	border: dashed 2px black;
+	float: left;
+
+	/*width: inherit;
+	height: inherit;*/
+}
+
+
+/*Set the dimensions and position for the team name paragraph*/
+.teamname{
+	display: inline;
+	height: 45px;
+	width: 125px;
+	border: dashed 2px red;
+	float: right;
+	font-size: 1.75em;
+	padding: 7px 0;
+	text-align: center;
+}
+
+/*Align the text in the div*/
+/*.team_name{
+	width: inherit;
+	height: 35px;
+	border: 1px solid black;
+	margin: 4px 0;
+	font-size: 2em;
+
+}*/
 
 
 /*Country flag image*/
