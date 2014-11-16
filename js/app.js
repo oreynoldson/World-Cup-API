@@ -13,17 +13,17 @@ function teamsData(){
 
 		.done(function(teams_objects){
 			//returns array of objects
-			// console.log(teams_objects);
+			console.log(teams_objects);
+
+			//itterates through all the objects in array returned,
+			//and for each carries out a function
 			$.each(teams_objects, function(index, team){
-				var teamPlace = $("#g" + this.group + "t"+ index)
-				//returns all team names
-				console.log(this.name + index + this.group);
-				//returns all objects in array
-				// console.log(this);
-				// $.each(this, function(property, value){
-					//logs all the properties and values for each object
-					// console.log(property + ": " + value);
-				// })//end of second each function
+				//finds the li corresponding with the id
+				var teamPlace = $("#t-" + index);
+				//Adds team name to the paragraph in the li
+				teamPlace.find(".teamname").html(team.name);
+				//Adds team logo to img in the li
+				teamPlace.find(".team_Logo").attr("src", team.logo);
 
 			})//end of first .each function
 
