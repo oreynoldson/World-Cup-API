@@ -1,6 +1,12 @@
 $(document).ready(function(){
-//on load call teams data
-teamsData();
+
+	//on load call teams data
+	teamsData();
+
+	//when click a team hide the groups_canvas
+	$(".group").on("click", function(){
+		$(".groups_canvas").hide(1200);
+	})
 
 })
 
@@ -24,12 +30,10 @@ function teamsData(){
 				teamPlace.find(".teamname").html(team.name);
 				//Adds team logo to img in the li
 				teamPlace.find(".team_Logo").attr("src", team.logo);
+				//Adds the teamId to the data attr - will use for next ajax call
+				teamPlace.attr("data-team-id", team.id);
 
 			})//end of first .each function
-
-
-			// var teamLi = $("#gAt1");
-			// teamLi.find(".team_Logo").attr("src", data.logo)
 		});//end of .done function
 
 

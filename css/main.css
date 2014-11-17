@@ -13,7 +13,7 @@ UTILITIES
 html{
 	height: 100%;
 	width: 100%;
-	background-color: lightgrey;
+	background-color: #ffff7f;
 }
 
 body{
@@ -35,29 +35,17 @@ ul li {
 	display: inline;
 }
 
-/*---------------------------------------------------------------------------------
-   Header - Higher z index than the background picture
----------------------------------------------------------------------------------*/
-
-/*header{
-	width: 100%;
-	height: 7%;
-	position: fixed;
-	top: 0;
-	left: 0;
-	outline: solid 2px black;
-	margin: 0;
-	z-index: 100;
+/*For testing*/
+.none{
+	display: none;
 }
 
-header h1{
-	text-align: center;
-	padding: 5px 10px;
-	font-size: 2em;
-}*/
+/*---------------------------------------------------------------------------------
+MAIN PAGE - GROUPS AND SQUADS
+---------------------------------------------------------------------------------*/
 
 /*---------------------------------------------------------------------------------
-   Div: Groups Canvas - Contains Back gound image
+   Div: Groups Canvas - Contains Back gound image - zindex 100 = main page
 ---------------------------------------------------------------------------------*/
 
 .groups_canvas{
@@ -66,8 +54,8 @@ header h1{
 	position: relative;
 	top: 0;
 	left: 0;
-	outline: solid 2px black;
-	
+	/*outline: solid 2px black;*/
+	z-index: 100;
 	margin: 0;
 	
 	/*Set the background image*/
@@ -261,3 +249,55 @@ header h1{
 	color: darkblue;
 	font-family: 'Merienda', cursive;
 }
+
+/*---------------------------------------------------------------------------------
+  SECOND PAGE - TEAM SQUADS, PLAYERS, and PLAYER STATS
+---------------------------------------------------------------------------------*/
+.squad_canvas{
+	width: 100%;
+	min-height: 100%;
+	/*position: relative;
+	top: 0;
+	left: 0;
+	border: solid 2px black;*/
+}
+
+.squad_container{
+	width: 100%;
+	min-height: 643px;
+	/*position: relative;
+	top: 0;
+	left: 0;*/
+	/*outline: solid black 2px;*/
+	padding: 10px;
+}
+
+/*-------------------------------------------------------------------------------
+  Team Header : contains logo and team name 
+---------------------------------------------------------------------------------*/
+.squad_header{
+	/*position: relative;*/
+	width: 50%;
+	height: 100px;
+	margin: 0 auto;
+	padding: 10px;
+	/*top: 0;
+	left: 0;*/
+	outline: solid black 2px;
+}
+
+.squad_logo{
+	border: dashed 1px red;
+	width: 20%;
+	height:100%;
+	float: left;
+	margin-right: 20px
+}
+
+.squad_name{
+	border: dashed 1px blue;
+	width: 75%;
+	height: 100%;
+	float: left;
+}
+
