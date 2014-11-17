@@ -4,8 +4,14 @@ $(document).ready(function(){
 	teamsData();
 
 	//when click a team hide the groups_canvas
-	$(".group").on("click", function(){
+	$(".team").on("click", function(){
 		$(".groups_canvas").hide(1200);
+		//get the team clicked on id from data
+		var teamId = $(this).data("team-id");
+		//logs team id
+		// console.log(teamId);
+		//new ajax call which takes the team id a url param
+		playersData(teamId);
 	})
 
 })
@@ -18,8 +24,8 @@ function teamsData(){
 	$.getJSON(teamsDataUrl)
 
 		.done(function(teams_objects){
-			//returns array of objects
-			console.log(teams_objects);
+			//returns array of team objects
+			// console.log(teams_objects);
 
 			//itterates through all the objects in array returned,
 			//and for each carries out a function
@@ -39,3 +45,18 @@ function teamsData(){
 
 }//end of teamsData function
 
+//function to make ajax call to get squad data for team clicked
+function playersData(teamId){
+	//logs team id
+	console.log(teamId);
+	//var for url to get all players for specific team
+	var playersDataUrl = "http://worldcup.kimonolabs.com/api/players?sort=position&fields=firstName,lastName,nickname,age,position,image,heightCm,weightKg,clubId,id&teamId=" + teamId +"&apikey=G2zsU3S6EO93SDps2ambg5h79WJ5qhoi"
+
+	$.getJSON(playersDataUrl)
+
+		.done(function(players_objects){
+			//returns array of players objects
+			console.log(players_objects);
+		});//end of .done function for players data
+
+}//end of players data function
