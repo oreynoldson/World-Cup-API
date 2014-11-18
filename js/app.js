@@ -12,6 +12,15 @@ $(document).ready(function(){
 		// console.log(teamId);
 		//new ajax call which takes the team id a url param
 		playersData(teamId);
+
+		//gets team name and logo and stores in a variable
+		var teamNameVar = $(this).find(".teamname").html();
+		var teamLogoVar = $(this).find(".team_Logo").attr("src");
+		// console.log(teamLogoVar);
+		// console.log(teamNameVar);
+		
+		//Sets the team name and logo on the squad page
+		squadHeaderFn(teamNameVar, teamLogoVar);
 	})
 
 })
@@ -22,9 +31,8 @@ function teamsData(){
 	var teamsDataUrl = "http://worldcup.kimonolabs.com/api/teams?sort=group&fields=name,logo,group,id&apikey=G2zsU3S6EO93SDps2ambg5h79WJ5qhoi"
 	
 	$.getJSON(teamsDataUrl)
-
+		//returns array of team objects
 		.done(function(teams_objects){
-			//returns array of team objects
 			// console.log(teams_objects);
 
 			//itterates through all the objects in array returned,
@@ -53,10 +61,16 @@ function playersData(teamId){
 	var playersDataUrl = "http://worldcup.kimonolabs.com/api/players?sort=position&fields=firstName,lastName,nickname,age,position,image,heightCm,weightKg,clubId,id&teamId=" + teamId +"&apikey=G2zsU3S6EO93SDps2ambg5h79WJ5qhoi"
 
 	$.getJSON(playersDataUrl)
-
+		//returns array of players objects
 		.done(function(players_objects){
-			//returns array of players objects
 			console.log(players_objects);
+
 		});//end of .done function for players data
 
 }//end of players data function
+
+function squadHeaderFn(teamNameVar, teamLogoVar) {
+	var squadHeader = $(".squad_header");
+	squadHeader.find(".squad_name").html(teamNameVar);
+	squadHeader.find(".squad_logo").attr("src", teamLogoVar);
+}
