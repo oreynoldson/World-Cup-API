@@ -311,4 +311,79 @@ MAIN PAGE - GROUPS AND SQUADS
 }
 
 
+/*-------------------------------------------------------------------------------
+  Team List : contains all players pictures
+---------------------------------------------------------------------------------*/
+/*contains all players pictures*/
+.squadPlayers_container{
+	width: 100%;
+	min-height: 500px;
+	position: relative;
+	top: 20px;
+	left: 0;
+	border: solid 1px black;
+}
 
+/*generic player div style*/
+.player_div{
+	width: 150px;
+	height: 150px;
+	position: absolute;
+	border: solid 1px blue;
+}
+
+/*p0 - 7*/
+.top_row{
+	top: 0;
+}
+
+/*p8 - 15*/
+.middle_row{
+	top: 166px;/*includes 16px margin top*/
+}
+
+/*p16 - 22*/
+.bottom_row{
+	top: 332px;
+}
+
+/*individual player div positioning*/
+/*horizaonal position for column*/
+.col_1{
+	
+	left: 16px;
+}
+
+.col_2{
+	left: 182px;/*includes 16px left margin  182px*/
+}
+
+.col_3{
+	left: 348px;
+}
+
+.col_4{
+	left: 514px;
+}
+
+.col_5{
+	left: 680px;
+}
+
+.col_6{
+	left: 846px;
+}
+
+.col_7{
+	left: 1012px;
+}
+
+.col_8{
+	left: 1178px;
+}
+
+/*BUTTON TO GO BACK TO MAIN PAGE*/
+
+.go_back{
+	background-color: green;
+}
