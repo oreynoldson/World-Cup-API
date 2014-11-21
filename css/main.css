@@ -329,7 +329,7 @@ MAIN PAGE - GROUPS AND SQUADS
 	width: 150px;
 	height: 150px;
 	position: absolute;
-	border: solid 1px blue;
+	/*border: solid 1px blue;*/
 }
 
 /*p0 - 7*/
@@ -386,4 +386,65 @@ MAIN PAGE - GROUPS AND SQUADS
 
 .go_back{
 	background-color: green;
+}
+
+/*-----------------------------------------
+  INSIDE THE PLAYER DIV
+-------------------------------------------*/
+
+.player_img{
+	width: 100%;
+	height: 80%;
+	border: solid 2px darkblue;
+}
+
+.player_name{
+	width: 100%;
+	height: 20%;
+	border: dashed 1px red;
+	font-size: .7em;
+	text-align: center;
+	padding: 6px 2px;
+	font-weight: 700;
+	color: darkblue;
+	font-family: 'Merienda', cursive;
+	border: solid 2px green;
+	border-radius: 5px;
+}
+
+/*-----------------------------------------
+  INSIDE THE PLAYER DIV - THE OVERLAY
+-------------------------------------------*/
+
+.player_overlay{
+	/*position: absolute;
+	width: 100%;
+	height: 80%;
+	top: 0;
+	left: 0;
+	background-color: green;*/
+}
+
+.player_overlay_inner{
+
+}
+
+	/*-webkit-transition: height 2s, ease-in-out;
+    -moz-transition: height, 2s, ease-in-out;
+    -o-transition: height, 2s, ease-in-out;
+    transition: height, 2s, ease-in-out;*/
+}
+
+.player_div:hover .player_overlay{
+	/*height:80%;
+	opacity: 1;*/
+}
+
+
+
+.player_position{
+	/*display: absolute;
+	height: 40px;
+	width: 100%;
+	border: solid 1px red;*/
 }

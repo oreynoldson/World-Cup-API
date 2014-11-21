@@ -21,9 +21,21 @@ $(document).ready(function(){
 		
 		//Sets the team name and logo on the squad page
 		squadHeaderFn(teamNameVar, teamLogoVar);
-	})
 
-})
+	})//end of .team click function
+
+	//function when the mouse enters the player photo div
+	$(".player_img").on("click", function(){
+		//get the club id from data then store as an id
+		var clubId = $(this).closest(".player_div").data("club-id");
+		console.log("clubId: " + clubId);
+		//get the player id from 
+		var playerId = $(this).closest(".player_div").data("player-id");
+		console.log("playerId: " + playerId);
+	})//end of on mouseenter
+
+
+})//end of doc ready
 
 //function to make ajax call to get teams objects
 function teamsData(){
@@ -47,11 +59,10 @@ function teamsData(){
 				//Adds the teamId to the data attr - will use for next ajax call
 				teamPlace.attr("data-team-id", team.id);
 
-			})//end of first .each function
+			})//end of .each function for teams
 		});//end of .done function
-
-
 }//end of teamsData function
+
 
 //function to make ajax call to get squad data for team clicked
 function playersData(teamId){
@@ -65,12 +76,29 @@ function playersData(teamId){
 		.done(function(players_objects){
 			console.log(players_objects);
 
+			//itterates through all players in team returned 
+			$.each(players_objects, function(index, player){
+				//finds div corresponding with the index no
+				var playerDiv = $("#p" + index);
+				//adds player name to DOM
+				playerDiv.find(".player_name").html(player.nickname);
+				//adds player image to DOM
+				playerDiv.find(".player_img").attr("src", player.image);
+				//adds club id to the data tag
+				playerDiv.data("club-id", player.clubId)
+				//adds the player id to the data tag
+				playerDiv.data("player-id", player.id);
+
+			})//end of each fnction for players
+
 		});//end of .done function for players data
 
 }//end of players data function
 
+
+/*Adds team name and logo to sqad page*/
 function squadHeaderFn(teamNameVar, teamLogoVar) {
 	var squadHeader = $(".squad_header");
 	squadHeader.find(".squad_name").html(teamNameVar);
 	squadHeader.find(".squad_logo").attr("src", teamLogoVar);
-}
+}//end of squad Header function
