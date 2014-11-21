@@ -28,10 +28,14 @@ $(document).ready(function(){
 	$(".player_img").on("click", function(){
 		//get the club id from data then store as an id
 		var clubId = $(this).closest(".player_div").data("club-id");
-		console.log("clubId: " + clubId);
+		// console.log("clubId: " + clubId);
 		//get the player id from 
 		var playerId = $(this).closest(".player_div").data("player-id");
-		console.log("playerId: " + playerId);
+		// console.log("playerId: " + playerId);
+
+		//function to make ajax call to get players club and club logo
+		clubData(clubId);
+
 	})//end of on mouseenter
 
 
@@ -86,9 +90,6 @@ function playersData(teamId){
 				playerDiv.find(".player_img").attr("src", player.image);
 				//adds club id to the data tag
 				playerDiv.data("club-id", player.clubId)
-				//adds the player id to the data tag
-				playerDiv.data("player-id", player.id);
-
 			})//end of each fnction for players
 
 		});//end of .done function for players data
@@ -102,3 +103,10 @@ function squadHeaderFn(teamNameVar, teamLogoVar) {
 	squadHeader.find(".squad_name").html(teamNameVar);
 	squadHeader.find(".squad_logo").attr("src", teamLogoVar);
 }//end of squad Header function
+
+/*makes ajax call to get club data when click on the player photograph*/
+function clubData(clubId){
+	// console.log(clubId);
+	var clubDataUrl = "http://worldcup.kimonolabs.com/api/clubs/" + clubId + "?fields=name,logo&apikey=G2zsU3S6EO93SDps2ambg5h79WJ5qhoi";
+	console.log(clubDataUrl);
+} 
