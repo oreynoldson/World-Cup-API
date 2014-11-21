@@ -417,29 +417,63 @@ MAIN PAGE - GROUPS AND SQUADS
 -------------------------------------------*/
 
 .player_overlay{
-	/*position: absolute;
+	display: block;
+	position: absolute;
 	width: 100%;
 	height: 80%;
 	top: 0;
 	left: 0;
-	background-color: green;*/
+	overflow: hidden;
+	background-color: rgba(0, 0, 0, 0.90);
+	z-index: 20;
+	padding: 5px;
+
+	/*-webkit-transition: height 1s, ease-in-out;
+    -moz-transition: height, 1s, ease-in-out;
+    -o-transition: height, 1s, ease-in-out;
+    transition: height, 1s, ease-in-out;*/
 }
 
-.player_overlay_inner{
-
+/*Div containing the club logo - check to see if grey border appears before img load*/
+.player_clubLogo{
+	/*border: dashed 1px red;*/
+	width: 55px;
+	height: 55px;
+	display: block;
+	margin: 0 auto;
 }
 
-	/*-webkit-transition: height 2s, ease-in-out;
-    -moz-transition: height, 2s, ease-in-out;
-    -o-transition: height, 2s, ease-in-out;
-    transition: height, 2s, ease-in-out;*/
+/*Club name*/
+.player_club{
+	width: 100%;
+	height: 25px;
+	display: block;
+	margin: 2px 0;
+	color: yellow;
+	font-family: 'Merienda', cursive;
+	text-align: center;
+	padding: 2px 1px;
+	/*border: dashed 1px red;*/
 }
 
-.player_div:hover .player_overlay{
-	/*height:80%;
-	opacity: 1;*/
+/*Player position*/
+.player_position{
+	width: 100%;
+	height: 25px;
+	display: block;
+	margin: 1px 0;
+	color: white;
+	font-family: 'Merienda', cursive;
+	text-align: center;
+	padding: 2px 1px;
+	/*border: dashed 1px red;*/
 }
 
+
+/*.player_overlay:hover{
+	height:80%;
+}
+*/
 
 
 .player_position{
