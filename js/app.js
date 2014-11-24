@@ -25,30 +25,29 @@ $(document).ready(function(){
 	})//end of .team click function
 
 	//function when the mouse enters the player photo div
-	$(".player_img").on("click", function(){
+	$(".img").on("click", function(){
+		// make the overlay drop down
+		$(this).addClass("hover");
 		//get the club id from data then store as an id
 		var clubId = $(this).closest(".player_div").data("club-id");
 		// console.log("clubId: " + clubId);
-		//get the player id from 
-		var playerId = $(this).closest(".player_div").data("player-id");
-		// console.log("playerId: " + playerId);
-
+		
 		//function to make ajax call to get players club and club logo
 		clubData(clubId);
 
-		//set the logo, team name in the overlay for the specific player
-		// overlayTeamData();
+	})//end of on .img mouseenter
 
-	})//end of on click
-
-	// handle the mouseenter functionality
-    $(".img").mouseenter(function(){
-        $(this).addClass("hover");
-    })
-    // handle the mouseleave functionality
-    .mouseleave(function(){
+	// handle the mouseleave functionality
+    $(".img").mouseleave(function(){
+    	//remove overlay
         $(this).removeClass("hover");
-    });
+
+        $(this).find(".player_clubLogo").attr("src", " ");
+
+        $(this).find(".player_club").html(" ");
+
+    })
+   
 
 
 })//end of doc ready
@@ -90,7 +89,7 @@ function playersData(teamId){
 	$.getJSON(playersDataUrl)
 		//returns array of players objects
 		.done(function(players_objects){
-			console.log(players_objects);
+			// console.log(players_objects);
 
 			//itterates through all players in team returned 
 			$.each(players_objects, function(index, player){
@@ -102,6 +101,8 @@ function playersData(teamId){
 				playerDiv.find(".player_img").attr("src", player.image);
 				//adds club id to the data tag
 				playerDiv.data("club-id", player.clubId)
+				//add the player position to the overlay
+				playerDiv.find(".player_position").html(player.position);
 			})//end of each fnction for players
 
 		});//end of .done function for players data
@@ -120,6 +121,18 @@ function squadHeaderFn(teamNameVar, teamLogoVar) {
 function clubData(clubId){
 	// console.log(clubId);
 	var clubDataUrl = "http://worldcup.kimonolabs.com/api/clubs/" + clubId + "?fields=name,logo&apikey=G2zsU3S6EO93SDps2ambg5h79WJ5qhoi";
-	console.log(clubDataUrl);
+	// console.log(clubDataUrl);
+	//makes call to get club logo an name
+	$.getJSON(clubDataUrl)
+		.done(function(club_object){
+			// console.log(club_object);
+			var img = $(".img");
+			//gets the clubs logo from the object retrived and adds it the the image hovered over
+			img.find(".player_clubLogo").attr("src", club_object.logo);
+			//gets the club nmae from the object retrived and adds it to the image hovered over
+			img.find(".player_club").html(club_object.name);
 
+		});//end of .done function for club data
 } 
+
+

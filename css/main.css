@@ -449,15 +449,15 @@ MAIN PAGE - GROUPS AND SQUADS
   	top: 5px;
   	left: 50px;
   	z-index: 100;
-  	width: 55px;
-  	height: 55px;
+  	width: 45px;
+  	height: 45px;
   	display: block;
 }
 
 .player_cpPos {
   width: 100%;
-  height: 25px;
-  padding: 3px 2px;
+  
+ /* padding: 3px 2px;*/
   display: block;
   position: absolute;
   left: 0;
@@ -469,11 +469,13 @@ MAIN PAGE - GROUPS AND SQUADS
 }
 
 .player_club{
-  top: 62px;
+  top: 52px;
+  height: 30px;
 }
 
 .player_position{
-  top: 88px;
+  top: 90px;
+  height: 20px;
   color: yellow;
 }
 
