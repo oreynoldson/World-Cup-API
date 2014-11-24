@@ -36,7 +36,19 @@ $(document).ready(function(){
 		//function to make ajax call to get players club and club logo
 		clubData(clubId);
 
-	})//end of on mouseenter
+		//set the logo, team name in the overlay for the specific player
+		// overlayTeamData();
+
+	})//end of on click
+
+	// handle the mouseenter functionality
+    $(".img").mouseenter(function(){
+        $(this).addClass("hover");
+    })
+    // handle the mouseleave functionality
+    .mouseleave(function(){
+        $(this).removeClass("hover");
+    });
 
 
 })//end of doc ready
@@ -109,4 +121,5 @@ function clubData(clubId){
 	// console.log(clubId);
 	var clubDataUrl = "http://worldcup.kimonolabs.com/api/clubs/" + clubId + "?fields=name,logo&apikey=G2zsU3S6EO93SDps2ambg5h79WJ5qhoi";
 	console.log(clubDataUrl);
+
 } 

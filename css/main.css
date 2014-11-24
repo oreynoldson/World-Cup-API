@@ -392,16 +392,24 @@ MAIN PAGE - GROUPS AND SQUADS
   INSIDE THE PLAYER DIV
 -------------------------------------------*/
 
-.player_img{
-	width: 100%;
-	height: 80%;
-	border: solid 2px darkblue;
+.img {
+  position: relative;
+  float: left;
+  margin-bottom: 5px;
+  width: 100%;/*changed from auto*/
+  height: 80%;
+  overflow: hidden;
+  border: solid 2px darkblue;
+  cursor: pointer;
 }
 
 .player_name{
 	width: 100%;
 	height: 20%;
-	border: dashed 1px red;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	/*border: dashed 1px red;*/
 	font-size: .7em;
 	text-align: center;
 	padding: 6px 2px;
@@ -413,72 +421,88 @@ MAIN PAGE - GROUPS AND SQUADS
 }
 
 /*-----------------------------------------
-  INSIDE THE PLAYER DIV - THE OVERLAY
+  INSIDE THE .img div - THE OVERLAY
 -------------------------------------------*/
 
-.player_overlay{
-	display: block;
-	position: absolute;
-	width: 100%;
-	height: 80%;
-	top: 0;
-	left: 0;
-	overflow: hidden;
-	background-color: rgba(0, 0, 0, 0.90);
-	z-index: 20;
-	padding: 5px;
-
-	/*-webkit-transition: height 1s, ease-in-out;
-    -moz-transition: height, 1s, ease-in-out;
-    -o-transition: height, 1s, ease-in-out;
-    transition: height, 1s, ease-in-out;*/
+.img > .player_img {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+ /* border: solid 1px red;*/
+  height: 100%;
 }
 
-/*Div containing the club logo - check to see if grey border appears before img load*/
+.overlay{
+  display: block;
+  position: absolute;
+  z-index: 20;
+  background: rgba(0, 0, 0, 0.9);
+  overflow: hidden;
+  transition: all 0.5s;
+}
+
+/*positions the club logo*/
 .player_clubLogo{
-	/*border: dashed 1px red;*/
-	width: 55px;
-	height: 55px;
-	display: block;
-	margin: 0 auto;
+/*	border: dashed 1px blue;*/
+	position: absolute;
+  	top: 5px;
+  	left: 50px;
+  	z-index: 100;
+  	width: 55px;
+  	height: 55px;
+  	display: block;
 }
 
-/*Club name*/
+.player_cpPos {
+  width: 100%;
+  height: 25px;
+  padding: 3px 2px;
+  display: block;
+  position: absolute;
+  left: 0;
+  /*border: dashed 1px red;*/
+  
+  color: white;
+  font-family: 'Merienda', cursive;
+  text-align: center;
+}
+
 .player_club{
-	width: 100%;
-	height: 25px;
-	display: block;
-	margin: 2px 0;
-	color: yellow;
-	font-family: 'Merienda', cursive;
-	text-align: center;
-	padding: 2px 1px;
-	/*border: dashed 1px red;*/
+  top: 62px;
 }
-
-/*Player position*/
-.player_position{
-	width: 100%;
-	height: 25px;
-	display: block;
-	margin: 1px 0;
-	color: white;
-	font-family: 'Merienda', cursive;
-	text-align: center;
-	padding: 2px 1px;
-	/*border: dashed 1px red;*/
-}
-
-
-/*.player_overlay:hover{
-	height:80%;
-}
-*/
-
 
 .player_position{
-	/*display: absolute;
-	height: 40px;
-	width: 100%;
-	border: solid 1px red;*/
+  top: 88px;
+  color: yellow;
+}
+
+/* =======================================
+  EFFECT 1 - SLIDE IN TOP
+========================================== */
+
+.overlay {
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 0;
+  
+  /*Smooth transition on mouseleave*/
+  -webkit-transition: height 1s, ease-in-out, .5s;
+  -moz-transition: height, 1s, ease-in-out, .5s;
+  -o-transition: height, 1s, ease-in-out, .5s;
+  transition: height, 1s, ease-in-out, .5s;
+}
+
+/*When .hover class added to parent the 
+overlay height gets set to 100% */
+.img.hover .overlay {
+  height: 100%;
+  
+  /*Smooth transition on mouseenter*/
+  -webkit-transition: height 1.5s, ease-in-out, 1s;
+  -moz-transition: height, 1.5s, ease-in-out, 1s;
+  -o-transition: height, 1.5s, ease-in-out, 1s;
+  transition: height, 1.5s, ease-in-out, 1s;
 }
