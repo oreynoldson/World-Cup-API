@@ -5,6 +5,7 @@ $(document).ready(function(){
 
 	//when click a team hide the groups_canvas
 	$(".team").on("click", function(){
+
 		$(".groups_canvas").hide(1200);
 		//get the team clicked on id from data
 		var teamId = $(this).data("team-id");
@@ -24,6 +25,7 @@ $(document).ready(function(){
 
 	})//end of .team click function
 
+
 	//function when the mouse enters the player photo div
 	$(".img").on("mouseenter", function(){
 		// make the overlay drop down
@@ -36,6 +38,8 @@ $(document).ready(function(){
 		clubData(clubId);
 
 	})//end of on .img mouseenter
+
+
 
 	// handle the mouseleave functionality
     $(".img").mouseleave(function(){
@@ -54,6 +58,8 @@ $(document).ready(function(){
     })
 
 })//end of doc ready
+
+
 
 //function to make ajax call to get teams objects
 function teamsData(){
@@ -80,6 +86,8 @@ function teamsData(){
 			})//end of .each function for teams
 		});//end of .done function
 }//end of teamsData function
+
+
 
 
 //function to make ajax call to get squad data for team clicked
@@ -113,12 +121,16 @@ function playersData(teamId){
 }//end of players data function
 
 
+
+
 /*Adds team name and logo to sqad page*/
 function squadHeaderFn(teamNameVar, teamLogoVar) {
 	var squadHeader = $(".squad_header");
 	squadHeader.find(".squad_name").html(teamNameVar);
 	squadHeader.find(".squad_logo").attr("src", teamLogoVar);
 }//end of squad Header function
+
+
 
 /*makes ajax call to get club data when click on the player photograph*/
 function clubData(clubId){
