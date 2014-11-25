@@ -25,7 +25,7 @@ $(document).ready(function(){
 	})//end of .team click function
 
 	//function when the mouse enters the player photo div
-	$(".img").on("click", function(){
+	$(".img").on("mouseenter", function(){
 		// make the overlay drop down
 		$(this).addClass("hover");
 		//get the club id from data then store as an id
@@ -42,13 +42,16 @@ $(document).ready(function(){
     	//remove overlay
         $(this).removeClass("hover");
 
-        $(this).find(".player_clubLogo").attr("src", " ");
+        // $(this).find(".player_clubLogo").attr("src", " ");
 
-        $(this).find(".player_club").html(" ");
+        // $(this).find(".player_club").html(" ");
 
+     })
+
+    //functionality to return to main page
+    $(".go_back").on("click", function(){
+    	$(".groups_canvas").show(1200);
     })
-   
-
 
 })//end of doc ready
 
