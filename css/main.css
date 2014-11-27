@@ -472,6 +472,7 @@ MAIN PAGE - GROUPS AND SQUADS
 .player_club{
   top: 52px;
   height: 30px;
+  font-size: .8em;
 }
 
 .player_position{
@@ -535,6 +536,7 @@ overlay height gets set to 100% */
 	box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.4);
 	-webkit-box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.4);
 	-moz-box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.4);
+	-o-box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.4);
 }
 
 .go_back:hover{
