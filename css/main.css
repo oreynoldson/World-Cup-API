@@ -285,7 +285,10 @@ MAIN PAGE - GROUPS AND SQUADS
 	/*top: 0;
 	left: 0;*/
 	border-radius: 25px;
-	border: solid green 2px;
+	border: solid green 4px;
+	box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.4);
+	-webkit-box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.4);
 }
 
 .squad_logo{
@@ -321,7 +324,7 @@ MAIN PAGE - GROUPS AND SQUADS
 	position: relative;
 	top: 20px;
 	left: 0;
-	border: solid 1px black;
+	/*border: solid 1px black;*/
 }
 
 /*generic player div style*/
@@ -329,6 +332,9 @@ MAIN PAGE - GROUPS AND SQUADS
 	width: 150px;
 	height: 150px;
 	position: absolute;
+	box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.4);
+	-webkit-box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.4);
 	/*border: solid 1px blue;*/
 }
 
@@ -394,6 +400,7 @@ MAIN PAGE - GROUPS AND SQUADS
   height: 80%;
   overflow: hidden;
   border: solid 2px darkblue;
+ /* border-radius: 5px;*/
   cursor: pointer;
 }
 
@@ -411,7 +418,7 @@ MAIN PAGE - GROUPS AND SQUADS
 	color: darkblue;
 	font-family: 'Merienda', cursive;
 	border: solid 2px green;
-	border-radius: 5px;
+	/*border-radius: 5px;*/
 }
 
 /*-----------------------------------------
@@ -524,11 +531,16 @@ overlay height gets set to 100% */
 	text-transform: uppercase;
 	font-weight: 700;
 	cursor: pointer;
+
+	box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.4);
+	-webkit-box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.4);
 }
 
 .go_back:hover{
 	color: yellow;
-	border: 4px solid darkgrey;
+/*	border: 4px solid darkgrey;*/
+	box-shadow: none;
 }
 
 

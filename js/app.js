@@ -35,7 +35,7 @@ $(document).ready(function(){
 		// console.log("clubId: " + clubId);
 		
 		//function to make ajax call to get players club and club logo
-		clubData(clubId);
+		// clubData(clubId);
 
 	})//end of on .img mouseenter
 
@@ -88,6 +88,13 @@ function teamsData(){
 }//end of teamsData function
 
 
+/*Adds team name and logo to sqad page*/
+function squadHeaderFn(teamNameVar, teamLogoVar) {
+	var squadHeader = $(".squad_header");
+	squadHeader.find(".squad_name").html(teamNameVar);
+	squadHeader.find(".squad_logo").attr("src", teamLogoVar);
+}//end of squad Header function
+
 
 
 //function to make ajax call to get squad data for team clicked
@@ -100,7 +107,7 @@ function playersData(teamId){
 	$.getJSON(playersDataUrl)
 		//returns array of players objects
 		.done(function(players_objects){
-			// console.log(players_objects);
+			console.log(players_objects);
 
 			//itterates through all players in team returned 
 			$.each(players_objects, function(index, player){
@@ -110,11 +117,27 @@ function playersData(teamId){
 				playerDiv.find(".player_name").html(player.nickname);
 				//adds player image to DOM
 				playerDiv.find(".player_img").attr("src", player.image);
-				//adds club id to the data tag
-				playerDiv.data("club-id", player.clubId)
 				//add the player position to the overlay
 				playerDiv.find(".player_position").html(player.position);
+				//adds club id to the data tag
+				playerDiv.data("club-id", player.clubId)
+				//put club id into a var to use in next ajax call
+				// var clubIdVar = player.clubId;
+				// console.log(clubIdVar);
+
 			})//end of each fnction for players
+
+			//for each player retrives the club id and div reference and calls function for each
+			$(".player_div").each(function(index){
+				//gets the vlub id for each player
+				var thisPlayer = $(this);
+				var clubId = $(this).data("club-id");
+				var playerName = $(this).find(".player_name").text();
+				// console.log(playerName + clubId);
+				// console.log(player);
+				//function to make ajax call to get the club data for each player
+				clubData(clubId, thisPlayer, playerName);
+			})
 
 		});//end of .done function for players data
 
@@ -122,30 +145,20 @@ function playersData(teamId){
 
 
 
-
-/*Adds team name and logo to sqad page*/
-function squadHeaderFn(teamNameVar, teamLogoVar) {
-	var squadHeader = $(".squad_header");
-	squadHeader.find(".squad_name").html(teamNameVar);
-	squadHeader.find(".squad_logo").attr("src", teamLogoVar);
-}//end of squad Header function
-
-
-
-/*makes ajax call to get club data when click on the player photograph*/
-function clubData(clubId){
-	// console.log(clubId);
+/*makes ajax call to get club data */
+function clubData(clubId, thisPlayer, playerName){
+	//url with specific club id to make ajax request for each players club id
 	var clubDataUrl = "http://worldcup.kimonolabs.com/api/clubs/" + clubId + "?fields=name,logo&apikey=G2zsU3S6EO93SDps2ambg5h79WJ5qhoi";
-	// console.log(clubDataUrl);
+
 	//makes call to get club logo an name
 	$.getJSON(clubDataUrl)
 		.done(function(club_object){
-			// console.log(club_object);
-			var img = $(".img");
-			//gets the clubs logo from the object retrived and adds it the the image hovered over
-			img.find(".player_clubLogo").attr("src", club_object.logo);
-			//gets the club nmae from the object retrived and adds it to the image hovered over
-			img.find(".player_club").html(club_object.name);
+			//shows that the ajax calls return in no specific order
+			// console.log(playerName + ": " + club_object);
+			//gets the clubs logo from the object retrived and adds it to the player specifed using player (this)
+			thisPlayer.find(".player_clubLogo").attr("src", club_object.logo);
+			//gets the club nmae from the object retrived and adds it to the player specifed using (this)
+			thisPlayer.find(".player_club").html(club_object.name);
 
 		});//end of .done function for club data
 } 
